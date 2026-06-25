@@ -83,7 +83,11 @@ public class StatMenuScreen extends Screen {
         if (mc.player != null) {
             int px = pnlLeft + pnlW/2;
             int py = pnlTop + pnlH - 15;
-            InventoryScreen.renderEntityInInventory(g, px, py, 30, px - mx, py - 80 - my, mc.player);
+            InventoryScreen.renderEntityInInventory(g, px, py, 30,
+        new org.joml.Vector3f(0.0f, 0.0f, 0.0f),
+        new org.joml.Quaternionf().rotateY((float) Math.PI),
+        new org.joml.Quaternionf().rotateX((float) Math.atan((py - 80 - my) / 40.0)),
+        mc.player);
         }
 
         // ── Right panel ───────────────────────────────────────────────────────
